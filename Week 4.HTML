@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Responsive Flexbox Layout</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      background-color: #333;
+      color: white;
+      padding: 1rem;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    nav .logo {
+      font-size: 1.5rem;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .main-content {
+      flex: 3;
+      background-color: #f4f4f4;
+      padding: 20px;
+    }
+
+    .sidebar {
+      flex: 1;
+      background-color: #ddd;
+      padding: 20px;
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    /* Media Queries */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-top: 10px;
+      }
+    }
+
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .container {
+        flex-direction: row;
+      }
+
+      .main-content {
+        flex: 2;
+      }
+
+      .sidebar {
+        flex: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">MySite</div>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div class="main-content">
+      <h1>Main Content</h1>
+      <p>This is the main area of the page.</p>
+    </div>
+    <div class="sidebar">
+      <h2>Sidebar</h2>
+      <p>Additional content or navigation can go here.</p>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 MySite. All rights reserved.</p>
+  </footer>
+</body>
+</html>
